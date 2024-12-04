@@ -1,0 +1,13 @@
+server:
+  port: 8811
+
+spring:
+  application:
+    name: stress-testing-app
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/stress_db?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&allowMultiQueries=true
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
