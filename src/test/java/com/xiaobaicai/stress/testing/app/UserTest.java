@@ -1,5 +1,7 @@
 package com.xiaobaicai.stress.testing.app;
 
+import com.alibaba.fastjson2.JSON;
+import com.xiaobaicai.stress.testing.app.dataobject.UserDO;
 import com.xiaobaicai.stress.testing.app.service.UserDaoService;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
@@ -19,5 +21,11 @@ public class UserTest {
     @Test
     public void testDeleteUser(){
         userDaoService.removeById(1);
+    }
+
+    @Test
+    public void testQueryUser(){
+        UserDO userDO = userDaoService.getById(1);
+        System.out.println(JSON.toJSONString(userDO));
     }
 }
